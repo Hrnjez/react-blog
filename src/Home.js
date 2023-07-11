@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 
 const Home = () => {    
@@ -8,16 +8,25 @@ const Home = () => {
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ]);
 
+    const [name, setName] = useState("mario")
+
     const handleDelete = (id) => {
         const newBlogs = blogs.filter((blog) => blog.id !== id);
         setBlogs(newBlogs);
     }
 
- 
+    useEffect(() => {
+        console.log('use effect ran');
+        console.log(name);
+    }, [name]); 
+    // CASE 1: '[]'-> empty square brackets here means it only runs once at first render
+    // CASE 2: '[name]' -> it runs everytime when that 'name' state changes
+    
     return ( 
         <div className="home">
             <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
-            <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's Blogs" handleDelete={handleDelete}/>
+            <button onClick={() => setName('luigi')}>change name </button>
+            <p>{name}</p>
         </div>
      );
 }
