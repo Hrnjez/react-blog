@@ -15,7 +15,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-  color: #f1356d;
+  color: #2196f3;
 }
 .navbar .links {
   margin-left: auto;
@@ -26,7 +26,7 @@
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: #2196f3;
 }
 .content {
   max-width: 600px;
@@ -36,7 +36,7 @@
 
 /* blog previews / list */
 .blog-preview {
-  background: linear-gradient( 335deg, #f1f1f1, #f1f1f133, #f1f1f1);
+  background: linear-gradient( 335deg, #f1fff9, #f1fffd33, #f1fbff);
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
@@ -48,6 +48,10 @@
 }
 .blog-preview h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #2196f3;
   margin-bottom: 8px;
+}
+
+.blog-preview a {
+  text-decoration: none;
 }
